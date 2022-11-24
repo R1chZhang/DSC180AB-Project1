@@ -1,6 +1,6 @@
 import sys
 
-sys.path.insert(0, 'data')
+sys.path.insert(0, 'test')
 from testData import myTestData
 
 sys.path.insert(0, 'src')
