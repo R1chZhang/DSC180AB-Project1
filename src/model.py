@@ -45,6 +45,7 @@ def model_list():
     
     return model_list
 
+
 def run(model,max_epoch=500):
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -100,4 +101,4 @@ def run(model,max_epoch=500):
             print(f'Epoch: {epoch:03d}, Loss: {loss:.4f}, Valiation metric: {val_acc:.4f}')
         #print(f'Epoch: {epoch:03d}, Loss: {loss:.4f}, Val: {val_acc:.4f}, Test: {test_acc:.4f}')*2
     
-    return loss
+    return losses

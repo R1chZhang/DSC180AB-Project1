@@ -31,9 +31,17 @@ def main(targets):
         res=[]
         for i in model_list:
             res.append(run(model,max_epoch=500))
+            
         #run second
         dataset = LRGBDataset.LRGBDataset(root='/tmp/lrgb', name='Peptides-func')
-
+        
+        #this import  overwrites some of the above classes
+        import graph_level_model
+        model_list2 = graph_level_model.models()
+        res2=[]
+        for i in model_list:
+            res2.append(graph_level_model.run(model,max_epoch=500))
+        
 if __name__ == '__main__':
     # run via:
     # python main.py data features model
