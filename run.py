@@ -4,7 +4,7 @@ sys.path.insert(0, 'test')
 from testData import myTestData
 
 sys.path.insert(0, 'src')
-from model import model_build
+from model import model_list, run
 
 def main(targets):
     '''
@@ -13,11 +13,26 @@ def main(targets):
     
     `main` runs the targets in order of data=>analysis=>model.
     '''
-if 'test' in targets:
-    data = myTestData().data
-
-    build_model(GCN(data.num_features, 16, data.num_classes))
-    build_model(GAT(hidden_channels=8, heads=8))
+    #Run Test
+    if 'test' in targets:
+        res = []
+        
+        model_list = model_list()
+        for i in model_list:
+            res.append(run(model,max_epoch=50))
+            
+    #Run Project
+    if 'all' in targets:
+        from torch_geometric.datasets import LRGBDataset
+        
+        #run first
+        dataset = LRGBDataset.LRGBDataset(root='/tmp/lrgb', name='PascalVOC-SP')
+        model_list = model_list()
+        res=[]
+        for i in model_list:
+            res.append(run(model,max_epoch=500))
+        #run second
+        dataset = LRGBDataset.LRGBDataset(root='/tmp/lrgb', name='Peptides-func')
 
 if __name__ == '__main__':
     # run via:
