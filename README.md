@@ -16,7 +16,7 @@ develop an understandig of model performance comparatively across different mode
 
 -requirements.txt
 
--src: data: LRGBDataset.py
+-src: data: LRGBDataset.py, graph_level_model.py, model.py
 
 # Access Data
 
