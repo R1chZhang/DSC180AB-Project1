@@ -16,7 +16,7 @@ develop an understandig of model performance comparatively across different mode
 
 -requirements.txt
 
--src: data: LRGBDataset.py
+-src: data: LRGBDataset.py, graph_level_model.py, model.py
 
 # Access Data
 
@@ -24,7 +24,7 @@ In case the built-in Pytorch geometric modules does not contain the required dat
 
 Place the LRGBDataset.py under **envs\<env_name>\Lib\sitepackages\torch_geometric\datasets** to manualy download datasets. 
 
-Source of LRGB dataset: https://github.com/vijaydwivedi75/lrgb
+Reference of LRGB dataset: https://github.com/vijaydwivedi75/lrgb
 
 # Running the Project
 
