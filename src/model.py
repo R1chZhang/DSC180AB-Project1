@@ -15,6 +15,8 @@ from collections import Counter
 
 from torch_geometric.nn.models import GIN,GCN,GAT
 
+from torch_geometric.datasets import LRGBDataset
+dataset = LRGBDataset.LRGBDataset(root='/tmp/lrgb', name='PascalVOC-SP')
 
 class GATv2(torch.nn.Module):
     def __init__(self, hidden_channels, heads):
