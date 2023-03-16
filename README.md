@@ -1,6 +1,6 @@
 # DSC180AB-Project1
 This project attempts to replicate some of the long-range
-graph benchmarks result. The goal is to approaching the original metric numbers as well as
+graph benchmarks result. The goal is to match the original metric numbers as well as
 develop an understandig of model performance comparatively across different models and task types.
 # Project Outline
 
